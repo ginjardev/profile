@@ -8,7 +8,7 @@ body{
 body::before{
     content: "";
     position: fixed;
-    background: #040404 url('assets/fisher.jpg') top right no-repeat;
+    background: #040404 url('assets/greener.jpg') top right no-repeat;
     left: 0;
     background-size: cover;
     right: 0;
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6{
     padding: 0;
     line-height: 1;
     font-weight: 700;
-    font-family: "Popins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 #header h1 a,
 #header h1 a:hover{
@@ -89,4 +89,116 @@ h1, h2, h3, h4, h5, h6{
 }
 #header .social-links a:hover{
     background: #18d26e;
+}
+@media (max-width:992px) {
+    #header h1{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    #header .social-links {
+        margin-top: 15px;
+    }
+    #header .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.nav-menu{
+    margin-top: -450px;
+    margin-left: 57%;
+}
+.nav-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-menu li + li {
+    margin-left: 30px;
+}
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 400;
+}
+.nav-menu a::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #18d26e;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.nav-menu a:hover::before,
+.nav-menu li:hover > a::before,
+.nav-menu .active > a::before{
+    visibility: visible;
+    width: 25px;
+}
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+    color: #fff;
+    text-decoration: none;
+}
+/* mobile */
+.mobile-nav-toggle{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+.mobile-nav-toggle i {
+    color: #fff;
+}
+.mobile-nav{
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.7);
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    padding: 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+}
+.mobile-nav-active{
+    overflow: hidden;
+}
+.mobile-nav-active .mobile-nav{
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-nav a{
+    display: block;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 500;
+    outline: none;
+}
+.mobile-nav a:hover,
+.mobile-nav-active > a,
+.mobile-nav li:hover > a{
+    color: #18d26e;
+    text-decoration: none;
 }
